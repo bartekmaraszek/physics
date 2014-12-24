@@ -9,6 +9,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class ControlPanel extends JPanel {
 	
 	public static Color bgColor = Color.BLUE;

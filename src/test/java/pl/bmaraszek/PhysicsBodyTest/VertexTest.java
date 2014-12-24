@@ -2,7 +2,7 @@ package pl.bmaraszek.PhysicsBodyTest;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.After;
 import org.junit.Before;

@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
-import javax.swing.BoxLayout;
 import javax.swing.JApplet;
 
 import pl.bmaraszek.PhysicsBodies.BodyFactory;

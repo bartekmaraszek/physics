@@ -2,12 +2,11 @@ package pl.bmaraszek;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class PhysicsPanel extends JFrame{
 	
 	private final Dimension size = new Dimension(800, 600);
