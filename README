@@ -1,0 +1,12 @@
+A simple rigid body physics simulation demo utilizing different methods of numerical integration to calculate the body's position.
+
+1) right-click to add a new body to the simulation
+2) left-click and drag to move the body
+
+TODO:
+
+1) add a control panel to switch the integration method during runtime
+2) add a control panel to change the colors during runtime
+3) add a control panel to change the type of body added
+4) add additional forces
+5) add a control panel to adjust the gravity level during runtime
