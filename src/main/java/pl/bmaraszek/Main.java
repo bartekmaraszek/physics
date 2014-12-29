@@ -9,7 +9,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		SimulationPanel s = new SimulationPanel();
-		JFrame a = new PhysicsPanel(new ControlPanel(), s);
+		JFrame a = new PhysicsPanel(s);
 		a.setVisible(true);
 		s.start();
 	}

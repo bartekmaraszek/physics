@@ -9,17 +9,11 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PhysicsPanel extends JFrame{
 	
-	private final Dimension size = new Dimension(800, 600);
-	private final JPanel controlPanel;
-	private final JPanel simulationPanel;
+	private final Dimension size = new Dimension(600, 600);
 	
-	public PhysicsPanel(JPanel controlPanel, JPanel simulationPanel){
+	public PhysicsPanel(JPanel simulationPanel){
 		setLayout(new BorderLayout(0,0));
-		this.add(controlPanel, BorderLayout.LINE_END);
 		this.add(simulationPanel, BorderLayout.CENTER);
-		
-		this.controlPanel = controlPanel;
-		this.simulationPanel = simulationPanel;
 		
 		this.setMinimumSize(size);
 		this.setMaximumSize(size);
