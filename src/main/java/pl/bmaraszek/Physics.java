@@ -55,6 +55,14 @@ public class Physics {
 	private ForceGenerator2D gravity = ForceGeneratorFactory.createGravity(new Vector2D(0, 500));
 
 	private Integrator integrator = IntegratorFactory.create(IntegratorFactory.IntegratorType.VERLET);
+	
+	public void setIntegrator(Integrator integrator){
+		this.integrator = integrator;
+	}
+	
+	public Integrator getIntegrator(){
+		return this.integrator;
+	}
 
 	public Physics(int screenWidth, int screenHeight, int numberOfIterations) {
 		this.screenWidth = screenWidth;
