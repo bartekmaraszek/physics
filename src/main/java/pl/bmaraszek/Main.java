@@ -8,8 +8,10 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		SimulationPanel s = new SimulationPanel();
-		JFrame a = new PhysicsPanel(new ControlPanel(), s);
+		ControlPanel c = new ControlPanel();
+		JFrame a = new PhysicsPanel(c, s);
 		a.setVisible(true);
 		s.start();
 	}

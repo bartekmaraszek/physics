@@ -13,12 +13,13 @@ import javax.swing.JPanel;
 
 import pl.bmaraszek.PhysicsBodies.BodyFactory;
 import pl.bmaraszek.PhysicsBodies.Vertex;
+import pl.bmaraszek.integrators.Integrator;
 import pl.bmaraszek.math.Vector2D;
 
 @SuppressWarnings("serial")
 public class SimulationPanel extends JPanel implements Runnable {
 
-	static final int FPS = 30;
+	static final int FPS = 60;
 	static final int SECOND_TO_NANOSECOND = 1000000000; /* a billion */
 	static final int SCREEN_WIDTH = 600;
 	static final int SCREEN_HEIGHT = 550;
@@ -29,9 +30,40 @@ public class SimulationPanel extends JPanel implements Runnable {
 	/* The main physics world */
 	private Physics world;
 	private BodyFactory bodyFactory;
+	
+	/* Parent physics panel */
+	PhysicsPanel physicsPanel;
 
 	private int mouseX;
 	private int mouseY;
+	
+	public SimulationPanel(){
+		initPhysics();
+	}
+	
+	public void setIntegrator(Integrator integrator){
+		world.setIntegrator(integrator);
+	}
+	
+	public Integrator getIntegrator(){
+		return world.getIntegrator();
+	}
+
+	public Physics getWorld() {
+		return world;
+	}
+
+	public void setWorld(Physics world) {
+		this.world = world;
+	}
+	
+	public void setPhysicsPanel(PhysicsPanel physicsPanel){
+		this.physicsPanel = physicsPanel;
+	}
+	
+	public PhysicsPanel getPhysicsPanel(){
+		return this.physicsPanel;
+	}
 
 	public void start() {
 		this.enableEvents(AWTEvent.MOUSE_EVENT_MASK | AWTEvent.MOUSE_MOTION_EVENT_MASK);
@@ -113,8 +145,6 @@ public class SimulationPanel extends JPanel implements Runnable {
 		Graphics g = screen.getGraphics();
 		Graphics appletGraphics = getGraphics();
 
-		/* Set up the physics */
-		initPhysics();
 		/* Wait until the graphics context is valid */
 /*		while (!isActive()) {
 			Thread.yield();
@@ -132,6 +162,7 @@ public class SimulationPanel extends JPanel implements Runnable {
 					Thread.sleep(1);
 					System.out.println("---------sleep----------");
 				} catch (Throwable e) {
+					System.out.println("interrupted");
 				}
 			}
 			lastFrame = System.nanoTime();
